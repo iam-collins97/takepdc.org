@@ -655,7 +655,7 @@ footer {
 
 .host-name {
     display: inline-block;
-    background-color: var(--navy);
+    background-color: var(--yellow);
     color: #ffffff;
     font-size: 13px;
     padding: 6px 14px;
