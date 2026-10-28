@@ -56,3 +56,58 @@ if (waCard && waClose) {
         sessionStorage.setItem("waClosed", "yes");
     });
 }
+const typewriters = document.querySelectorAll(".typewriter");
+
+typewriters.forEach(function (el) {
+    const fullText = el.textContent.trim();
+    el.setAttribute("aria-label", fullText);
+    el.textContent = "";
+
+    const words = fullText.split(" ");
+
+    words.forEach(function (word, w) {
+        const wordSpan = document.createElement("span");
+        wordSpan.className = "tw-word";
+
+        for (const ch of word) {
+            const letter = document.createElement("span");
+            letter.className = "tw-letter";
+            letter.textContent = ch;
+            wordSpan.appendChild(letter);
+        }
+
+        el.appendChild(wordSpan);
+
+        if (w < words.length - 1) {
+            el.appendChild(document.createTextNode(" "));
+        }
+    });
+
+    const letters = el.querySelectorAll(".tw-letter");
+
+    function startTyping() {
+        let i = 0;
+        const timer = setInterval(function () {
+            if (i < letters.length) {
+                letters[i].classList.add("show");
+                i++;
+            } else {
+                clearInterval(timer);
+            }
+        }, 70);
+    }
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    startTyping();
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.6 });
+        observer.observe(el);
+    } else {
+        startTyping();
+    }
+});

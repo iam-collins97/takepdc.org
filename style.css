@@ -950,13 +950,74 @@ footer {
     filter: drop-shadow(0 1px 1px rgba(32, 41, 91, 0.35));
     animation: wave 1.6s ease-in-out 3s 2;
 }
+nav a.btn-register,
+[data-theme="dark"] nav a.btn-register {
+    display: inline-block;
+    background-color: var(--navy);
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 20px;
+    border-right: 3px solid var(--yellow);
+    border-bottom: 3px solid var(--yellow);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    animation: bubble 3s ease-in-out infinite;
+}
 
+nav a.btn-register:hover,
+[data-theme="dark"] nav a.btn-register:hover {
+    background-color: var(--yellow);
+    color: var(--navy);
+    border-color: var(--navy);
+    box-shadow: none;
+}
+.host-name {
+    border-right: 3px solid var(--yellow);
+    border-bottom: 3px solid var(--yellow);
+    animation: bubble 3.5s ease-in-out 0.5s infinite;
+}
+.host-photo {
+    animation: float 4s ease-in-out infinite, ring 2.5s ease-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes ring {
+    0% { box-shadow: 0 0 0 0 rgba(247, 171, 73, 0.6); }
+    70% { box-shadow: 0 0 0 14px rgba(247, 171, 73, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(247, 171, 73, 0); }
+}
+@keyframes bubble {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
 @keyframes wave {
     0% { transform: rotate(20deg); }
     25% { transform: rotate(38deg); }
     50% { transform: rotate(8deg); }
     75% { transform: rotate(38deg); }
     100% { transform: rotate(20deg); }
+}
+.tw-word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.tw-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.tw-letter.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 @media (max-width: 768px) {
     /* Header: logo on the left, moon and three lines on the right */
