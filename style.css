@@ -1085,6 +1085,79 @@ nav a.btn-register:hover,
     70% { box-shadow: 0 0 0 16px rgba(247, 171, 73, 0); }
     100% { box-shadow: 0 0 0 0 rgba(247, 171, 73, 0); }
 }
+.table-scroll {
+    overflow-x: auto;
+}
+
+.awards-wide {
+    min-width: 640px;
+}
+
+.awards-wide th,
+.awards-wide td {
+    text-align: center;
+}
+
+.awards-wide th:first-child,
+.awards-wide td:first-child {
+    text-align: left;
+    font-weight: 600;
+}
+
+.awards-table td.tick {
+    color: #2e9e5b;
+    font-size: 18px;
+}
+
+.awards-table td.no {
+    color: var(--text);
+    opacity: 0.55;
+    font-weight: 600;
+}
+
+.awards-box .awards-caption {
+    text-align: left;
+    font-size: 16px;
+    margin: -6px 0 16px 0;
+}
+.contact-card {
+    display: block;
+    text-decoration: none;
+}
+
+.contact-section .outcomes {
+    margin-top: 0;
+}
+.contact-card p {
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+.contact-whatsapp {
+    border-top-color: #25d366;
+}
+
+.contact-whatsapp .outcome-icon {
+    color: #25d366;
+}
+
+.contact-email .outcome-icon {
+    color: var(--yellow);
+}
+.contact-website {
+    border-top-color: var(--blue);
+}
+
+.contact-website .outcome-icon {
+    color: var(--blue);
+}
+
+.contact-instagram {
+    border-top-color: #e1306c;
+}
+
+.contact-instagram .outcome-icon {
+    color: #e1306c;
+}
 @media (max-width: 768px) {
     /* Header: logo on the left, moon and three lines on the right */
     header {
