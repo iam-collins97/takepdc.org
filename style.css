@@ -662,50 +662,285 @@ footer {
     border-radius: 20px;
 }
 
-.whatsapp-float {
+.wa-widget {
     position: fixed;
     bottom: 24px;
     right: 24px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 14px;
 }
 
-.whatsapp-label {
-    background-color: #ffffff;
+.wa-card {
+    position: relative;
+    width: 280px;
+    background-color: #e4e7ee;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    animation: waPop 0.5s ease 2s both;
+}
+
+.wa-card.hidden {
+    display: none;
+}
+
+@keyframes waPop {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wa-card-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 44px 16px 16px;
+    text-decoration: none;
     color: var(--navy);
-    font-size: 15px;
-    font-weight: 600;
-    padding: 10px 16px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(32, 41, 91, 0.25);
-    transition: all 0.3s ease;
 }
 
-.whatsapp-icon {
-    width: 60px;
-    height: 60px;
+.wa-card-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
     background-color: #25d366;
     color: #ffffff;
-    font-size: 34px;
     border-radius: 50%;
+    font-size: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.wa-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #3b4160;
+}
+
+.wa-card-text strong {
+    font-size: 18px;
+    color: var(--navy);
+}
+
+.wa-card-cta {
+    align-self: flex-start;
+    margin-top: 8px;
+    background-color: var(--navy);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 20px;
+    border-right: 3px solid var(--yellow);
+    border-bottom: 3px solid var(--yellow);
     transition: all 0.3s ease;
 }
 
-.whatsapp-float:hover .whatsapp-icon {
+.wa-card-link:hover .wa-card-cta {
+    background-color: var(--yellow);
+    color: var(--navy);
+    border-color: var(--navy);
+}
+
+.wa-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(32, 41, 91, 0.12);
+    color: var(--navy);
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.wa-button {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 36px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 0 5px rgba(37, 211, 102, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.wa-button:hover {
     transform: translateY(-4px);
 }
 
-.whatsapp-float:hover .whatsapp-label {
-    background-color: var(--yellow);
+.wa-dot {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 14px;
+    height: 14px;
+    background-color: #8be04e;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+}
+[data-theme="dark"] .host-box {
+    --surface: #e4e7ee;
+    --bg: #f4f6fa;
+    --text: #333333;
+    --heading: #20295b;
+    --soft: #eaf3f8;
+}
+.wa-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 14px;
 }
 
+.wa-card {
+    position: relative;
+    width: 280px;
+    background-color: #e4e7ee;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    animation: waPop 0.5s ease 2s both;
+}
+
+.wa-card.hidden {
+    display: none;
+}
+
+@keyframes waPop {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wa-card-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 44px 16px 16px;
+    text-decoration: none;
+    color: var(--navy);
+}
+
+.wa-card-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wa-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #3b4160;
+}
+
+.wa-card-text strong {
+    font-size: 18px;
+    color: var(--navy);
+}
+
+.wa-card-cta {
+    align-self: flex-start;
+    margin-top: 8px;
+    background-color: var(--navy);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 20px;
+    border-right: 3px solid var(--yellow);
+    border-bottom: 3px solid var(--yellow);
+    transition: all 0.3s ease;
+}
+
+.wa-card-link:hover .wa-card-cta {
+    background-color: var(--yellow);
+    color: var(--navy);
+    border-color: var(--navy);
+}
+
+.wa-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(32, 41, 91, 0.12);
+    color: var(--navy);
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.wa-button {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 36px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 0 5px rgba(37, 211, 102, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.wa-button:hover {
+    transform: translateY(-4px);
+}
+
+.wa-dot {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 14px;
+    height: 14px;
+    background-color: #8be04e;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+}
 @media (max-width: 768px) {
     /* Header: logo on the left, moon and three lines on the right */
     header {
@@ -854,20 +1089,18 @@ footer {
         position: static;
         margin-bottom: 24px;
     }
-
-    .whatsapp-float {
+        .wa-widget {
         bottom: 16px;
         right: 16px;
     }
 
-    .whatsapp-label {
-        font-size: 13px;
-        padding: 8px 12px;
+    .wa-card {
+        width: 230px;
     }
 
-    .whatsapp-icon {
-        width: 52px;
-        height: 52px;
-        font-size: 30px;
+    .wa-button {
+        width: 56px;
+        height: 56px;
+        font-size: 32px;
     }
 }
