@@ -1321,3 +1321,26 @@ nav a.btn-register:hover,
         font-size: 32px;
     }
 }
+.policy-number {
+    display: block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: var(--yellow);
+    margin-bottom: 8px;
+}
+.policy-box ul {
+    padding-left: 22px;
+    margin: 14px 0;
+}
+
+.policy-box li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+.policy-note {
+    background: #f4f4f4;
+    border-left: 4px solid var(--yellow);
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin-top: 18px;
+}
