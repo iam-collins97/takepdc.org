@@ -1344,3 +1344,9 @@ nav a.btn-register:hover,
     border-radius: 6px;
     margin-top: 18px;
 }
+.last-updated {
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 12px;
+}
