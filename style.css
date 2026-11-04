@@ -798,7 +798,6 @@ footer {
     border: 2px solid #ffffff;
     border-radius: 50%;
 }
-
 [data-theme="dark"] .host-box {
     --surface: #e4e7ee;
     --bg: #f4f6fa;
@@ -806,7 +805,142 @@ footer {
     --heading: #20295b;
     --soft: #eaf3f8;
 }
+.wa-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 14px;
+}
 
+.wa-card {
+    position: relative;
+    width: 280px;
+    background-color: #e4e7ee;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    animation: waPop 0.5s ease 2s both;
+}
+
+.wa-card.hidden {
+    display: none;
+}
+
+@keyframes waPop {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wa-card-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 44px 16px 16px;
+    text-decoration: none;
+    color: var(--navy);
+}
+
+.wa-card-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wa-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #3b4160;
+}
+
+.wa-card-text strong {
+    font-size: 18px;
+    color: var(--navy);
+}
+
+.wa-card-cta {
+    align-self: flex-start;
+    margin-top: 8px;
+    background-color: var(--navy);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 20px;
+    border-right: 3px solid var(--yellow);
+    border-bottom: 3px solid var(--yellow);
+    transition: all 0.3s ease;
+}
+
+.wa-card-link:hover .wa-card-cta {
+    background-color: var(--yellow);
+    color: var(--navy);
+    border-color: var(--navy);
+}
+
+.wa-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(32, 41, 91, 0.12);
+    color: var(--navy);
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.wa-button {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 36px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 0 5px rgba(37, 211, 102, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.wa-button:hover {
+    transform: translateY(-4px);
+}
+
+.wa-dot {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 14px;
+    height: 14px;
+    background-color: #8be04e;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+}
 .hand-icon {
     color: var(--yellow);
     display: inline-block;
@@ -816,7 +950,6 @@ footer {
     filter: drop-shadow(0 1px 1px rgba(32, 41, 91, 0.35));
     animation: wave 1.6s ease-in-out 3s 2;
 }
-
 nav a.btn-register,
 [data-theme="dark"] nav a.btn-register {
     display: inline-block;
@@ -838,13 +971,11 @@ nav a.btn-register:hover,
     border-color: var(--navy);
     box-shadow: none;
 }
-
 .host-name {
     border-right: 3px solid var(--yellow);
     border-bottom: 3px solid var(--yellow);
     animation: bubble 3.5s ease-in-out 0.5s infinite;
 }
-
 .host-photo {
     animation: float 4s ease-in-out infinite, ring 2.5s ease-out infinite;
 }
@@ -860,13 +991,11 @@ nav a.btn-register:hover,
     70% { box-shadow: 0 0 0 14px rgba(247, 171, 73, 0); }
     100% { box-shadow: 0 0 0 0 rgba(247, 171, 73, 0); }
 }
-
 @keyframes bubble {
     0% { transform: scale(1); }
     50% { transform: scale(1.07); }
     100% { transform: scale(1); }
 }
-
 @keyframes wave {
     0% { transform: rotate(20deg); }
     25% { transform: rotate(38deg); }
@@ -874,7 +1003,6 @@ nav a.btn-register:hover,
     75% { transform: rotate(38deg); }
     100% { transform: rotate(20deg); }
 }
-
 .tw-word {
     display: inline-block;
     white-space: nowrap;
@@ -891,7 +1019,6 @@ nav a.btn-register:hover,
     opacity: 1;
     transform: translateX(0);
 }
-
 .hero-buttons .btn {
     display: inline-flex;
     align-items: center;
@@ -958,7 +1085,6 @@ nav a.btn-register:hover,
     70% { box-shadow: 0 0 0 16px rgba(247, 171, 73, 0); }
     100% { box-shadow: 0 0 0 0 rgba(247, 171, 73, 0); }
 }
-
 .table-scroll {
     overflow-x: auto;
 }
@@ -994,7 +1120,6 @@ nav a.btn-register:hover,
     font-size: 16px;
     margin: -6px 0 16px 0;
 }
-
 .contact-card {
     display: block;
     text-decoration: none;
@@ -1003,12 +1128,10 @@ nav a.btn-register:hover,
 .contact-section .outcomes {
     margin-top: 0;
 }
-
 .contact-card p {
     text-align: center;
     overflow-wrap: anywhere;
 }
-
 .contact-whatsapp {
     border-top-color: #25d366;
 }
@@ -1020,7 +1143,6 @@ nav a.btn-register:hover,
 .contact-email .outcome-icon {
     color: var(--yellow);
 }
-
 .contact-website {
     border-top-color: var(--blue);
 }
@@ -1036,7 +1158,6 @@ nav a.btn-register:hover,
 .contact-instagram .outcome-icon {
     color: #e1306c;
 }
-
 @media (max-width: 768px) {
     /* Header: logo on the left, moon and three lines on the right */
     header {
@@ -1160,7 +1281,7 @@ nav a.btn-register:hover,
 
     /* Footer, tables, host photo and WhatsApp button */
     footer {
-        padding: 40px 20px 100px 20px;
+        padding: 40px 20px 20px 20px;
     }
 
     .footer-content {
@@ -1185,15 +1306,13 @@ nav a.btn-register:hover,
         position: static;
         margin-bottom: 24px;
     }
-
-    .wa-widget {
+        .wa-widget {
         bottom: 16px;
         right: 16px;
     }
 
-    /* On phones only the round button shows, so it never covers the footer links */
     .wa-card {
-        display: none;
+        width: 230px;
     }
 
     .wa-button {
@@ -1202,7 +1321,6 @@ nav a.btn-register:hover,
         font-size: 32px;
     }
 }
-
 .policy-number {
     display: block;
     font-family: 'Roboto Mono', monospace;
@@ -1210,7 +1328,6 @@ nav a.btn-register:hover,
     color: var(--yellow);
     margin-bottom: 8px;
 }
-
 .policy-box ul {
     padding-left: 22px;
     margin: 14px 0;
@@ -1220,7 +1337,6 @@ nav a.btn-register:hover,
     margin-bottom: 10px;
     line-height: 1.6;
 }
-
 .policy-note {
     background: #f4f4f4;
     border-left: 4px solid var(--yellow);
@@ -1228,14 +1344,12 @@ nav a.btn-register:hover,
     border-radius: 6px;
     margin-top: 18px;
 }
-
 .last-updated {
     font-size: 14px;
     font-style: italic;
     opacity: 0.8;
     margin-top: 12px;
 }
-
 .footer-legal {
     text-align: center;
     margin-top: 8px;
