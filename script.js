@@ -56,6 +56,7 @@ if (waCard && waClose) {
         sessionStorage.setItem("waClosed", "yes");
     });
 }
+
 const typewriters = document.querySelectorAll(".typewriter");
 
 typewriters.forEach(function (el) {
@@ -84,17 +85,36 @@ typewriters.forEach(function (el) {
     });
 
     const letters = el.querySelectorAll(".tw-letter");
+    let timer = null;
+    let endTimer = null;
+
+    function resetTyping() {
+        clearInterval(timer);
+        clearTimeout(endTimer);
+        letters.forEach(function (letter) {
+            letter.classList.remove("show");
+            letter.classList.remove("current");
+        });
+    }
 
     function startTyping() {
+        resetTyping();
         let i = 0;
-        const timer = setInterval(function () {
+        timer = setInterval(function () {
+            if (i > 0) {
+                letters[i - 1].classList.remove("current");
+            }
             if (i < letters.length) {
                 letters[i].classList.add("show");
+                letters[i].classList.add("current");
                 i++;
             } else {
                 clearInterval(timer);
+                endTimer = setTimeout(function () {
+                    letters[letters.length - 1].classList.remove("current");
+                }, 2000);
             }
-        }, 70);
+        }, 90);
     }
 
     if ("IntersectionObserver" in window) {
@@ -102,7 +122,8 @@ typewriters.forEach(function (el) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     startTyping();
-                    observer.unobserve(el);
+                } else {
+                    resetTyping();
                 }
             });
         }, { threshold: 0.6 });
