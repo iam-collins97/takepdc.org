@@ -974,8 +974,6 @@ nav a.btn-register:hover,
 .host-name {
     border-right: 3px solid var(--yellow);
     border-bottom: 3px solid var(--yellow);
-    animation: bubble 3.5s ease-in-out 0.5s infinite;
-}
 .host-photo {
     animation: float 4s ease-in-out infinite, ring 2.5s ease-out infinite;
 }
