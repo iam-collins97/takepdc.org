@@ -889,17 +889,6 @@ nav a.btn-register:hover,
     opacity: 1;
 }
 
-.tw-letter.current {
-    box-shadow: 4px 0 0 var(--yellow);
-    animation: blink 0.7s steps(1) infinite;
-}
-
-@keyframes blink {
-    0% { box-shadow: 4px 0 0 var(--yellow); }
-    50% { box-shadow: 4px 0 0 transparent; }
-    100% { box-shadow: 4px 0 0 var(--yellow); }
-}
-
 .hero-buttons .btn {
     display: inline-flex;
     align-items: center;
